@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../lib/site';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Emre Taşar.">
+  <section class="max-w-xl">
+    <p class="font-mono text-sm text-stone-500 dark:text-zinc-400">Contact</p>
+    <h1 class="mt-4 text-4xl font-semibold tracking-tight text-stone-950 dark:text-zinc-50">Let’s talk.</h1>
+    <p class="mt-6 text-lg leading-8 text-stone-600 dark:text-zinc-400">For an engineering conversation, a collaboration, or simply to say hello, email is the best way to reach me.</p>
+    <div class="mt-8 space-y-3 text-sm">
+      <p><a class="font-medium text-stone-950 underline decoration-stone-400 hover:decoration-stone-950 dark:text-zinc-50 dark:decoration-zinc-600 dark:hover:decoration-zinc-50" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+      <p><a class="text-stone-600 hover:text-stone-950 dark:text-zinc-400 dark:hover:text-zinc-50" href={siteConfig.links.github}>GitHub ↗</a></p>
+      <p><a class="text-stone-600 hover:text-stone-950 dark:text-zinc-400 dark:hover:text-zinc-50" href={siteConfig.links.linkedin}>LinkedIn ↗</a></p>
+    </div>
+  </section>
+</BaseLayout>

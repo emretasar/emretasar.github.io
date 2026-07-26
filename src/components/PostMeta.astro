@@ -1,0 +1,16 @@
+---
+import { formatDate, getReadingTime } from '../lib/blog';
+
+interface Props {
+  date: Date;
+  body: string;
+}
+
+const { date, body } = Astro.props;
+---
+
+<p class="text-sm text-stone-500 dark:text-zinc-400">
+  <time datetime={date.toISOString()}>{formatDate(date)}</time>
+  <span aria-hidden="true"> · </span>
+  {getReadingTime(body)} min read
+</p>
