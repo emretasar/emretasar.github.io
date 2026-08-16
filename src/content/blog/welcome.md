@@ -1,6 +1,6 @@
 ---
 title: "A focused space for engineering notes"
-description: "Why I’m keeping a small technical blog alongside my work in C++, embedded, and autonomous systems."
+description: "Why I’m keeping a small technical blog alongside my work"
 publishedAt: 2026-07-26
 tags: ["engineering", "software"]
 ---
