@@ -13,7 +13,7 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <article class="max-w-2xl">
+  <article class="w-full min-w-0 max-w-2xl">
     <header>
       <p class="font-mono text-sm text-stone-500 dark:text-zinc-400">Blog</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl dark:text-zinc-50">{post.data.title}</h1>

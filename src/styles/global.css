@@ -50,6 +50,10 @@
     @apply mt-8 text-xl font-semibold tracking-tight text-stone-950 dark:text-zinc-50;
   }
 
+  .prose-content h4 {
+    @apply mt-7 text-lg font-semibold tracking-tight text-stone-950 dark:text-zinc-50;
+  }
+
   .prose-content p,
   .prose-content ul,
   .prose-content ol {
@@ -87,5 +91,14 @@
 
   .prose-content blockquote {
     @apply mt-6 border-l-2 border-stone-400 pl-5 italic text-stone-600 dark:border-zinc-600 dark:text-zinc-400;
+  }
+
+  .prose-content table {
+    @apply mt-6 block max-w-full overflow-x-auto;
+  }
+
+  .prose-content th,
+  .prose-content td {
+    @apply whitespace-nowrap px-3 py-2 text-left;
   }
 }
