@@ -25,8 +25,34 @@ const { Content } = await render(post);
         </ul>
       </div>
     </header>
-    <div class="prose-content mt-12">
+    <div id="post-content" class="prose-content mt-12">
       <Content />
     </div>
   </article>
+
+  <dialog id="image-lightbox" class="m-auto max-h-[95vh] max-w-[95vw] rounded-lg bg-transparent p-0 backdrop:bg-black/80">
+    <button id="close-lightbox" class="absolute right-3 top-3 rounded-full bg-black/70 px-3 py-1 text-2xl leading-none text-white hover:bg-black" type="button" aria-label="Close enlarged image">×</button>
+    <img id="lightbox-image" class="max-h-[95vh] max-w-[95vw] rounded-lg object-contain" alt="" />
+  </dialog>
 </BaseLayout>
+
+<script>
+  const postContent = document.querySelector('#post-content');
+  const lightbox = document.querySelector('#image-lightbox');
+  const lightboxImage = document.querySelector('#lightbox-image');
+  const closeButton = document.querySelector('#close-lightbox');
+
+  postContent?.addEventListener('click', (event) => {
+    const image = event.target instanceof HTMLImageElement ? event.target : null;
+    if (!image || !lightbox || !lightboxImage) return;
+
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.showModal();
+  });
+
+  closeButton?.addEventListener('click', () => lightbox?.close());
+  lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+</script>
